@@ -53,20 +53,56 @@ table {
 * Summer of 2009
 ******************************************************************************/
 
+/* CSS Variables for theming */
+:root {
+  /* Light theme (default) */
+  --bg-primary: #FFFAF0;
+  --bg-secondary: #3B1F08;
+  --bg-gradient-top: #EBF6F6;
+  --bg-gradient-bottom: #FFFAF0;
+  --text-primary: #555555;
+  --text-secondary: #777777;
+  --text-dark: #333333;
+  --text-darkest: #000000;
+  --link-primary: #D33432;
+  --link-visited: #DF4945;
+  --link-border: #FFC1BF;
+  --border-light: #DFDFDF;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #1A1A1A;
+    --bg-secondary: #2b1606;
+    --bg-gradient-top: #111111;
+    --bg-gradient-bottom: #1A1A1A;
+    --text-primary: #D4D4D4;
+    --text-secondary: #A0A0A0;
+    --text-dark: #E0E0E0;
+    --text-darkest: #FFFFFF;
+    --link-primary: #FF6B6B;
+    --link-visited: #FF8787;
+    --link-border: #FF9999;
+    --border-light: #404040;
+  }
+}
+
 html, body {
-  background: #FFFAF0;
-  color: #555;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: Georgia, serif;
 }
 
 html {
-  background: #3B1F08;
+  background-color: var(--bg-secondary);
 }
 
 body {
-  background-image: url(../images/grass4.png), url(../images/top.png);
-  background-position: 0 100%, 50% 0;
-  background-repeat: repeat-x;
+  background: 
+    linear-gradient(to bottom, var(--bg-gradient-top) 0px, var(--bg-gradient-bottom) 250px) no-repeat,
+    var(--bg-gradient-bottom);
+  background-size: 100% 250px, 100% 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -119,18 +155,18 @@ dd {
 }
 
 a {
-  border-color: #FFC1BF;
+  border-color: var(--link-border);
   text-decoration: none;
   border-bottom-style: dotted;
   border-bottom-width: 1px;
 }
 
 a:link {
-  color: #D33432;
+  color: var(--link-primary);
 }
 
 a:visited {
-  color: #DF4945;
+  color: var(--link-visited);
 }
 
 a:hover {
@@ -166,7 +202,7 @@ header, #main, footer {
 /* HEADER
 *******************************************************************************/
 header {
-  border-bottom: 1px solid #dfdfdf;
+  border-bottom: 1px solid var(--border-light);
   position: relative;
   margin-bottom: 40px;
   overflow: hidden;
@@ -175,7 +211,7 @@ header {
 
 a#site_name {
     float: left;
-    color: #333;
+    color: var(--text-dark);
 		font-weight: 400;
     text-align: center;
 		font-size: 1.3rem;
@@ -198,7 +234,7 @@ a#site_name,
   line-height: 3rem;
   vertical-align: middle;
   padding: 0 1rem;
-  color: #777;
+  color: var(--text-secondary);
   border: none;
 }
 
@@ -207,12 +243,12 @@ header a:hover {
 }
 
 #navi li.active a {
-  color: #000;
+  color: var(--text-darkest);
 }
 
 #hero {
 	/*text-align: center;*/
-  color: #555;
+  color: var(--text-primary);
   padding: 1rem 0 3rem;
   font-size: 1.1rem;
 	transform: rotate(-3deg);
@@ -221,7 +257,7 @@ header a:hover {
 
 #hero:hover {
   cursor: default;
-  color: #333;
+  color: var(--text-dark);
 	transform: rotate(-2deg);
 }
 
