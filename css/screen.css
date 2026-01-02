@@ -74,7 +74,7 @@ table {
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-primary: #1A1A1A;
-    --bg-secondary: #2b1606;
+    --bg-secondary: #170c03;
     --bg-gradient-top: #111111;
     --bg-gradient-bottom: #1A1A1A;
     --text-primary: #D4D4D4;
@@ -96,13 +96,15 @@ html, body {
 
 html {
   background-color: var(--bg-secondary);
+  background-image: url("../images/earth.svg");
 }
 
 body {
-  background: 
+  background:
     linear-gradient(to bottom, var(--bg-gradient-top) 0px, var(--bg-gradient-bottom) 250px) no-repeat,
+    url('../images/grass.svg') repeat-x left bottom,
     var(--bg-gradient-bottom);
-  background-size: 100% 250px, 100% 100%;
+  background-size: 100% 250px, 64px 64px, 100% 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
