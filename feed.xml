@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>dichev.net</title><atom:link href="undefined/feed.xml" rel="self" type="application/rss+xml"></atom:link><link></link><description></description><pubDate>Wed, 17 Feb 2016 12:00:00 +0000</pubDate><generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator><language>bg</language><item><title>Лесно публикуване с wintersmith</title><link>undefined/bg/posts/189/</link><pubDate>Wed, 17 Feb 2016 12:00:00 +0000</pubDate><guid isPermaLink="true">undefined/bg/posts/189/</guid><author></author><description>&lt;p&gt;Този сайт е преживял много метаморфози. Преди време ползвах CMS системи като WordPress и Radiant. След това написах своя собствена системка, но това винаги изискваше да ползвам хостинг акаунт с база данни.&lt;/p&gt;
+&lt;p&gt;Напоследък ползвам един npm модул за генериране на статични сайтове от файлове. Казва се &lt;a href=&quot;https://github.com/jnordberg/wintersmith&quot;&gt;wintersmith&lt;/a&gt; и дава чудесна възможност да се ползват &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt; за хостване на съдържанието. Повече информация как се ползват тези неща може да се намери през линковете.&lt;/p&gt;
+&lt;p&gt;Има само един проблем - удобното публикуване в gh-pages бранча.&lt;/p&gt;
+&lt;p&gt;Последно се спрях на следния вариант:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Изпълнява се build командата за да получим статичния сайт в директория build&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;$ wintersmith build&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Премахваме remote бранча gh-pages&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;$ git push origin --delete gh-pages&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Публикуваме сайта от build директорията в нов remote бранч gh-pages&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;$ git subtree push --prefix=build origin gh-pages&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ето 3 стъпки за по-лесно публикуване на ново съдържание. Всъщност причината да пиша този пост е да тествам тази техника.&lt;/p&gt;
+</description></item><item><title>Дизайн жаргон: скеоморфизъм?</title><link>undefined/bg/posts/188/</link><pubDate>Mon, 20  Aug 2012 12:00:00 +0000</pubDate><guid isPermaLink="true">undefined/bg/posts/188/</guid><author></author><description>&lt;p&gt;Напоследък някои компании са обвинявани, че прекаляват със
+скеофоморфизма в продуктите си. Говоря за Епъл, но вероятно има и други, които ги имитират например.&lt;/p&gt;
+&lt;p&gt;Оказа се, че такава дума в българския нет не съществува. Затова реших да сложа тук малко информация по въпроса.&lt;/p&gt;
+&lt;p&gt;Според някои дефиниции, които изрових, &lt;strong&gt;скеоморф&lt;/strong&gt; е обект, който има орнаментални характеристики на структурата,
+която изобразява. Скеоморфи могат да бъдат използвани нарочно за да се придаде на даден обект
+характерен и вече познат облик. Например това може да бъде отпечатана марка върху пощенски плик.&lt;/p&gt;
+&lt;p&gt;Алтернативна дефиниция на &lt;strong&gt;скеоморфа&lt;/strong&gt; е елемент от дизайна или структурата, който има малко или никакво
+практическо приложение, но е бил съществен в правенето на оригиналния обект. Тази дефиниция обаче е по-ограничена.&lt;/p&gt;
+&lt;h2 id=&quot;-&quot;&gt;Малко връзки по темата&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.fastcodesign.com/1670796/a-former-iphone-ui-designer-defends-apples-fake-leather-design-philosophy&quot;&gt;В тази статия един бивш дизайнер в Епъл защитава този подход към
+проектирането на потребителски
+интерфейси.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description></item><item><title>Полифилове за запълване на дупките в HTML5 възможностите на браузърите</title><link>undefined/bg/posts/186/</link><pubDate>Thu, 12 Apr 2012 12:00:00 +0000</pubDate><guid isPermaLink="true">undefined/bg/posts/186/</guid><author></author><description>&lt;p&gt;Всички искаме от раз да използваме най-новите и готини възможности
+имплементирани от модерните браузъри, но има един малъък проблем - как
+можем да използваме тези възможности и в същото време да сме сигурни, че
+по-старите браузъри все пак ще покажат страниците по желания начин.&lt;/p&gt;
+&lt;p&gt;Това може да стане с помощта на &lt;strong&gt;полифилове&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Полифиловете са JavaScript инструменти, които репликират стандартните
+приложнопрограмни интерфейси (АПИ-та) на модерните браузъри. В тази
+&lt;a href=&quot;http://www.fitc.ca/events/presentations/presentation.cfm?event=127&amp;amp;presentation_id=1758&quot;&gt;своя
+презентация&lt;/a&gt;
+JavaScript гуруто Ади Османи показва как се използват полифиловете за
+засичане на възможни функционалности в браузърите и как да правите свои
+собствени тестове за такива неща.&lt;/p&gt;
+&lt;p&gt;Обърнато е внимание на страхотния инструмент
+&lt;a href=&quot;http://modernizr.com/&quot;&gt;Modernizr&lt;/a&gt;, който използвах в един
+от проектите ми миналата година.&lt;/p&gt;
+</description></item><item><title>Как да извличаме данни от сайт като Epay.bg с Firebug конзолата и малко jQuery код</title><link>undefined/bg/posts/185/</link><pubDate>Mon, 20 Feb 2012 12:00:00 +0000</pubDate><guid isPermaLink="true">undefined/bg/posts/185/</guid><author></author><description>&lt;p&gt;Винаги ми се е искало да имам някаква възможност да знам колко общо съм
+изхарчил по дадено направление за определен период в Epay.bg (Ипей) -
+един логичен случай на употреба (use case).&lt;/p&gt;
+&lt;p&gt;Открих, че при нужда това може да стане чрез използването на това, което
+има като възможности в Ипей и малко джаваскрипт в конзолата на добавката
+за популярния браузър Firefox наречена &lt;a href=&quot;http://getfirebug.com/&quot;&gt;Firebug&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;може би най-популярния плъгин за дебъгване на уеб интерфейси при
+разработката им.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;За да получи нужната информация, потребителят трябва да направи
+следното:&lt;/p&gt;
+&lt;p&gt;От началния екран (след логин в Ипей) да избере връзката озаглавена
+“Всички движения“&lt;/p&gt;
+&lt;p&gt;След това може да бъде приложен филтър по кореспондент за да бъдат
+извдени всички движения към ЧЕЗ примерно&lt;/p&gt;
+&lt;p&gt;След това ето този код може да ви даде информацията от клетките - т.е.
+това може да позволи да се направи операция, която да изчисли колко пари
+са изхарчени по определенно нещо.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;jQuery(&amp;quot;html body table.body tbody tr td center table#main_table tbody tr td#main_table form table.grid tbody tr.tr-2, html body table.body tbody tr td center table#main_table tbody tr td#main_table form table.grid tbody tr.tr-1&amp;quot;) .each(function() { console.log($(this).text()); });&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Надявам се кодът да е полезен на някого - как точно да стане
+пресмятането оставям на желаещите да се дозанимаят.&lt;/p&gt;
+</description></item><item><title>Сайтове срещу приложения в мобилен контекст</title><link>undefined/bg/posts/184/</link><pubDate>Mon, 13 Feb 2012 12:00:00 +0000</pubDate><guid isPermaLink="true">undefined/bg/posts/184/</guid><author></author><description>&lt;p&gt;Господин Якоб Нилсен споделя следното заключение в &lt;a href=&quot;http://www.useit.com/alertbox/mobile-sites-apps.html&quot;&gt;последния си
+доклад&lt;/a&gt; относно
+&lt;strong&gt;ползваемоста&lt;/strong&gt; (usability) на &lt;strong&gt;мобилни сайтове&lt;/strong&gt; сравнено с
+&lt;strong&gt;приложения за мобилни операционни системи&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;(Apps may remain better for tasks that are true applications, such as
+photo editing — whereas mobile sites will be better for design
+problems like e-commerce/m-commerce, corporate websites, news, medical
+info, social networking, etc.)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Това твърдение наистина, по мое мнение, е вярно и всъщност е такова
+откакто има напълно функционални браузъри базирани на
+&lt;a href=&quot;http://www.webkit.org/&quot;&gt;wеbkit&lt;/a&gt; - проектът с отворен код на Епъл.&lt;/p&gt;
+&lt;p&gt;Другото важно откритие не Нилсен е, че мобилните приложения трябва да се
+оправят с правилата на компаниите правещи операционните системи като
+Епъл и Гугъл и съответно да се налага да правят компромиси, които
+избягват чрез сайтовете си.&lt;/p&gt;
+</description></item></channel></rss>
